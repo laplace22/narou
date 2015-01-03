@@ -40,8 +40,8 @@ module CommandLine
       multiple_argument_extract(argv)
     end
     unless STDIN.tty? || STDIN.eof?
-        # pipeで接続された場合、標準入力からIDリストを受け取って引数に繋げる
-        argv += STDIN.gets.split
+      # pipeで接続された場合、標準入力からIDリストを受け取って引数に繋げる
+      argv += STDIN.gets.split
     end
     Command.get_list[arg].new.execute(argv)
   ensure
